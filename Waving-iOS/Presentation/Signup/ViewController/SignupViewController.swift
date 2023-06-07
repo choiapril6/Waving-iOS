@@ -53,6 +53,38 @@ final class SignupViewController: UIViewController {
         return stackView
     }()
     
+    lazy private var userInputView: WVSignupInputView = {
+        let view = WVSignupInputView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy private var buttonContainerView: UIView = {
+        let containerView = UIView()
+        let buttonView = WVButton()
+        let buttomModel = WVButtonModel { [weak self] in
+            guard let self else { return }
+            self.stackView.removeFromSuperview()
+            self.contentView.addSubview(self.userInputView)
+            self.userInputView.snp.makeConstraints { make in
+                make.top.equalToSuperview()
+                make.leading.equalToSuperview()
+                make.trailing.equalToSuperview()
+            }
+        }
+        buttonView.setup(model: buttomModel)
+        containerView.addSubview(buttonView)
+        
+        buttonView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        return containerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,17 +94,35 @@ final class SignupViewController: UIViewController {
     }
     
     private func setupView() {
+//        self.navigationController?.navigationBar.isTranslucent = false
+//        self.extendedLayoutIncludesOpaqueBars = false
         scrollView.addSubview(contentView)
-        NSLayoutConstraint.activate([
-            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
-        ])
-        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
-        contentViewHeight.priority = .defaultLow
-        contentViewHeight.isActive = true
+//        NSLayoutConstraint.activate([
+//            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+//            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+//            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+//            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
+//        ])
+//        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+//        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+//        contentViewHeight.priority = .defaultLow
+//        contentViewHeight.isActive = true
+        
+        contentView.snp.makeConstraints { make in
+            make.leading.equalTo(scrollView.contentLayoutGuide)
+            make.trailing.equalTo(scrollView.contentLayoutGuide)
+            make.top.equalTo(scrollView.contentLayoutGuide)
+            make.bottom.equalTo(scrollView.contentLayoutGuide)
+            make.width.equalTo(scrollView)
+            make.height.equalTo(scrollView).priority(.low)
+        }
+        
+        view.addSubview(buttonContainerView)
+        buttonContainerView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
         
         let imageContainerView = UIView()
         let logoImageView = UIImageView()
