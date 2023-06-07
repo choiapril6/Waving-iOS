@@ -22,6 +22,8 @@
 		CE0412B12A23640500C790F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0412B02A23640500C790F3 /* HomeViewController.swift */; };
 		CE0412B32A23642200C790F3 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0412B22A23642200C790F3 /* FriendsViewController.swift */; };
 		CE0412B52A23643400C790F3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0412B42A23643400C790F3 /* SettingViewController.swift */; };
+		CE2184A52A304E6A0000489A /* WVSignupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2184A42A304E6A0000489A /* WVSignupInputView.swift */; };
+		CE2184A82A30581A0000489A /* SignupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2184A72A30581A0000489A /* SignupViewCell.swift */; };
 		CE8861F02A2CB4CB00204CBA /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8861ED2A2CB15300204CBA /* Pretendard-Medium.ttf */; };
 		CE8861F12A2CB4CD00204CBA /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8861EF2A2CB16400204CBA /* Pretendard-Regular.ttf */; };
 		CE8861F22A2CB4CF00204CBA /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8861EE2A2CB16300204CBA /* Pretendard-Bold.ttf */; };
@@ -70,6 +72,8 @@
 		CE0412B02A23640500C790F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE0412B22A23642200C790F3 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		CE0412B42A23643400C790F3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CE2184A42A304E6A0000489A /* WVSignupInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVSignupInputView.swift; sourceTree = "<group>"; };
+		CE2184A72A30581A0000489A /* SignupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewCell.swift; sourceTree = "<group>"; };
 		CE8861ED2A2CB15300204CBA /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		CE8861EE2A2CB16300204CBA /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		CE8861EF2A2CB16400204CBA /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
@@ -241,6 +245,14 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		CE2184A62A3058030000489A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE2184A72A30581A0000489A /* SignupViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE9BBCD52A297F9B0036E335 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +264,7 @@
 		CE9BBCD62A297FA50036E335 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				CE2184A62A3058030000489A /* View */,
 				CE9BBCDA2A297FD10036E335 /* ViewController */,
 				CE9BBCDC2A297FED0036E335 /* ViewModel */,
 			);
@@ -309,6 +322,7 @@
 			children = (
 				CE9BBCDE2A2AFA3B0036E335 /* WVButton.swift */,
 				CE9BBCE22A2B17880036E335 /* DesignConstants.swift */,
+				CE2184A42A304E6A0000489A /* WVSignupInputView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -512,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2184A52A304E6A0000489A /* WVSignupInputView.swift in Sources */,
 				CE0412AE2A2359CF00C790F3 /* MainTabBarViewModel.swift in Sources */,
 				A82EC6632A2634B500DABF26 /* Colors.swift in Sources */,
 				CEE3E77E2A17A93200BC1464 /* ViewController.swift in Sources */,
@@ -531,6 +546,7 @@
 				CE0412AB2A23552200C790F3 /* MainTabBarController.swift in Sources */,
 				A82EC67A2A263D1800DABF26 /* FontManager.swift in Sources */,
 				CE0412B32A23642200C790F3 /* FriendsViewController.swift in Sources */,
+				CE2184A82A30581A0000489A /* SignupViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
