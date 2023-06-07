@@ -21,14 +21,20 @@ final class SignupViewController: UIViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
+
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -300)
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         return scrollView
+    }()
+    
+    lazy private var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy private var stackView: UIStackView = {
@@ -56,30 +62,69 @@ final class SignupViewController: UIViewController {
     }
     
     private func setupView() {
+        scrollView.addSubview(contentView)
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
+        ])
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+        contentViewHeight.isActive = true
         
-        let label1 = UILabel()
-        label1.text = "Label 1"
-        stackView.addArrangedSubview(label1)
-
-        let label2 = UILabel()
-        label2.text = "Label 2"
-        stackView.addArrangedSubview(label2)
+        let imageContainerView = UIView()
+        let logoImageView = UIImageView()
+        if let image = UIImage(named: "intro_logo") {
+            logoImageView.image = image
+        }
+        imageContainerView.addSubview(logoImageView)
+        logoImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        stackView.addArrangedSubview(imageContainerView)
         
-        let label3 = UILabel()
-        label3.text = "Label 3"
-        stackView.addArrangedSubview(label3)
+        let imageContainerView2 = UIView()
+        let logoImageView2 = UIImageView()
+        if let image = UIImage(named: "intro_logo") {
+            logoImageView2.image = image
+        }
+        imageContainerView2.addSubview(logoImageView2)
+        logoImageView2.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        stackView.addArrangedSubview(imageContainerView2)
         
-        let label4 = UILabel()
-        label4.text = "Label 4"
-        stackView.addArrangedSubview(label4)
+        let imageContainerView3 = UIView()
+        let logoImageView3 = UIImageView()
+        if let image = UIImage(named: "intro_logo") {
+            logoImageView3.image = image
+        }
+        imageContainerView3.addSubview(logoImageView3)
+        logoImageView3.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        stackView.addArrangedSubview(imageContainerView3)
         
-        let label5 = UILabel()
-        label5.text = "Label 5"
-        stackView.addArrangedSubview(label5)
-        
-        let label6 = UILabel()
-        label6.text = "Label 6"
-        stackView.addArrangedSubview(label6)
+        let imageContainerView4 = UIView()
+        let logoImageView4 = UIImageView()
+        if let image = UIImage(named: "intro_logo") {
+            logoImageView4.image = image
+        }
+        imageContainerView4.addSubview(logoImageView4)
+        logoImageView4.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        stackView.addArrangedSubview(imageContainerView4)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
@@ -87,7 +132,13 @@ final class SignupViewController: UIViewController {
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 
-        scrollView.contentSize = stackView.bounds.size
+        contentView.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
 
     }
 }
