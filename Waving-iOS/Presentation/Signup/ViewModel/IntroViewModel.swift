@@ -22,12 +22,12 @@ final class IntroViewModel {
     var sendRoute: PassthroughSubject<IntroRoute, Never> = .init()
     
     func signup() {
-        Log.d("가입")
-        sendRoute.send(.signupView)
+        NetworkManager.shared.userAuthentication()
+//        sendRoute.send(.signupView)
     }
     
     func login() {
-        Log.d("로그인")
-        sendRoute.send(.loginView)
+        NetworkManager.shared.userJoin()
+//        sendRoute.send(.loginView)
     }
 }

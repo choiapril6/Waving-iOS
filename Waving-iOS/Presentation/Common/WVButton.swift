@@ -45,6 +45,15 @@ final class WVButton: UIView {
         clipsToBounds = true
         
         self.button = {
+            
+            /*
+             var configuration = UIButton.Configuration.plain()
+             configuration.contentInsets = .init(top: 19, leading: 30, bottom: 19, trailing: 16)
+             configuration.image = UIImage.uc_image(named: "ic_12_fill_triangle_10_down")
+                 .flatMap { $0.b_colorChangedDynamicImage(with: UIColor.Tier2.Text.mainLv03) }
+
+             let view = UIButton(configuration: configuration)
+             */
             let button = UIButton(type: .custom)
             
             button.titleLabel?.adjustsFontSizeToFitWidth = true

@@ -36,6 +36,7 @@
 		CE9BBCE32A2B17880036E335 /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BBCE22A2B17880036E335 /* DesignConstants.swift */; };
 		CE9BBCE52A2B1E490036E335 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9BBCE42A2B1E490036E335 /* Color.xcassets */; };
 		CEA32DD22A3357540006FA31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA32DD12A3357540006FA31 /* String+.swift */; };
+		CEC16F4E2A44157900B6BB7F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16F4D2A44157900B6BB7F /* NetworkManager.swift */; };
 		CED363CE2A321FCE00119CE5 /* WVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED363CD2A321FCE00119CE5 /* WVTextField.swift */; };
 		CED363D02A32227E00119CE5 /* SignDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED363CF2A32227E00119CE5 /* SignDataStore.swift */; };
 		CED83A8C2A2B71460031AFF0 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED83A8B2A2B71460031AFF0 /* IntroViewModel.swift */; };
@@ -97,6 +98,7 @@
 		CE9BBCE22A2B17880036E335 /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
 		CE9BBCE42A2B1E490036E335 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		CEA32DD12A3357540006FA31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		CEC16F4D2A44157900B6BB7F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CED363CD2A321FCE00119CE5 /* WVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVTextField.swift; sourceTree = "<group>"; };
 		CED363CF2A32227E00119CE5 /* SignDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDataStore.swift; sourceTree = "<group>"; };
 		CED83A8B2A2B71460031AFF0 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		A8E0C0B72A23641000C8696E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CEC16F4C2A44157100B6BB7F /* Network */,
 				A8E0C0B82A23641F00C8696E /* Log.swift */,
 				CE9BBCE02A2B0F270036E335 /* UIColor+.swift */,
 				CE6798372A31E3DE0078F43C /* NSMutableAttributedString+.swift */,
@@ -358,6 +361,14 @@
 				CE9BBCE22A2B17880036E335 /* DesignConstants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CEC16F4C2A44157100B6BB7F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEC16F4D2A44157900B6BB7F /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		CEE3E76D2A17A93200BC1464 = {
@@ -574,6 +585,7 @@
 				CEA32DD22A3357540006FA31 /* String+.swift in Sources */,
 				CE9BBCDF2A2AFA3B0036E335 /* WVButton.swift in Sources */,
 				CEE3E77C2A17A93200BC1464 /* SceneDelegate.swift in Sources */,
+				CEC16F4E2A44157900B6BB7F /* NetworkManager.swift in Sources */,
 				CED363D02A32227E00119CE5 /* SignDataStore.swift in Sources */,
 				CED83A9F2A2B86F40031AFF0 /* SignupViewController.swift in Sources */,
 				CED9EAB42A3C3C5700BA8737 /* SignupStepTermOfUseView.swift in Sources */,
